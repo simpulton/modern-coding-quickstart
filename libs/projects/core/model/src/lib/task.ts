@@ -60,6 +60,13 @@ export function changeTaskStatus(task: Task, next: TaskStatus): Task {
   return { ...task, status: next };
 }
 
+export function assignTask(task: Task, assigneeId: string): Task {
+  if (assigneeId.trim().length === 0) {
+    throw new Error('assigneeId must not be empty');
+  }
+  return { ...task, assigneeId };
+}
+
 // Repository port implemented by the data layer's Drizzle adapter.
 export interface TaskRepository {
   save(task: Task): Promise<void>;
