@@ -3,4 +3,5 @@
 export const PROJECTS_TOKENS = {
   ProjectRepository: Symbol.for('pm.projects.ProjectRepository'),
   TaskRepository: Symbol.for('pm.projects.TaskRepository'),
+  CommentRepository: Symbol.for('pm.projects.CommentRepository'),
 } as const;

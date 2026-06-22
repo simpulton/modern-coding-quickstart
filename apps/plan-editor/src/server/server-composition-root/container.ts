@@ -9,7 +9,12 @@ import {
   SystemClock,
   UuidGenerator,
 } from '@pm/shared-infrastructure';
-import { DrizzleProjectRepository, DrizzleTaskRepository, PROJECTS_TOKENS } from '@pm/projects-data';
+import {
+  DrizzleCommentRepository,
+  DrizzleProjectRepository,
+  DrizzleTaskRepository,
+  PROJECTS_TOKENS,
+} from '@pm/projects-data';
 import { DrizzleUserRepository, USERS_TOKENS } from '@pm/users-data';
 import { applySchema } from './schema-ddl';
 import { seedDevData } from './seed-dev-data';
@@ -40,6 +45,7 @@ async function buildContainer(): Promise<Container> {
   container.bind(SHARED_TOKENS.TokenSigner).to(JwtTokenService);
   container.bind(PROJECTS_TOKENS.ProjectRepository).to(DrizzleProjectRepository);
   container.bind(PROJECTS_TOKENS.TaskRepository).to(DrizzleTaskRepository);
+  container.bind(PROJECTS_TOKENS.CommentRepository).to(DrizzleCommentRepository);
   container.bind(USERS_TOKENS.UserRepository).to(DrizzleUserRepository);
 
   await seedDevData(container);

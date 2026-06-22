@@ -24,3 +24,15 @@ export const tasks = pgTable(
   },
   (table) => [index('tasks_project_id_idx').on(table.projectId)],
 );
+
+export const comments = pgTable(
+  'comments',
+  {
+    id: text('id').primaryKey(),
+    projectId: text('project_id').notNull(),
+    authorId: text('author_id').notNull(),
+    body: text('body').notNull(),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (table) => [index('comments_project_id_idx').on(table.projectId)],
+);

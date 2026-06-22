@@ -7,7 +7,12 @@ import {
   SystemClock,
   UuidGenerator,
 } from '@pm/shared-infrastructure';
-import { DrizzleProjectRepository, DrizzleTaskRepository, PROJECTS_TOKENS } from '@pm/projects-data';
+import {
+  DrizzleCommentRepository,
+  DrizzleProjectRepository,
+  DrizzleTaskRepository,
+  PROJECTS_TOKENS,
+} from '@pm/projects-data';
 import { DrizzleUserRepository, USERS_TOKENS } from '@pm/users-data';
 
 export const TEST_JWT_SECRET = 'test-secret-please-do-not-use-in-production';
@@ -26,6 +31,7 @@ export function createTestContainer(db: PgliteDatabase): Container {
 
   container.bind(PROJECTS_TOKENS.ProjectRepository).to(DrizzleProjectRepository);
   container.bind(PROJECTS_TOKENS.TaskRepository).to(DrizzleTaskRepository);
+  container.bind(PROJECTS_TOKENS.CommentRepository).to(DrizzleCommentRepository);
   container.bind(USERS_TOKENS.UserRepository).to(DrizzleUserRepository);
 
   return container;

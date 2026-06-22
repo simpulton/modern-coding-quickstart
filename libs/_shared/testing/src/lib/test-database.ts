@@ -45,6 +45,15 @@ export async function createTestDatabase(): Promise<TestDatabase> {
       created_at TIMESTAMPTZ NOT NULL DEFAULT now()
     );
     CREATE INDEX tasks_project_id_idx ON tasks (project_id);
+
+    CREATE TABLE comments (
+      id TEXT PRIMARY KEY,
+      project_id TEXT NOT NULL,
+      author_id TEXT NOT NULL,
+      body TEXT NOT NULL,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+    );
+    CREATE INDEX comments_project_id_idx ON comments (project_id);
   `);
 
   return {

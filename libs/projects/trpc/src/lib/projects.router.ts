@@ -5,6 +5,7 @@ import { SHARED_TOKENS } from '@pm/shared-kernel';
 import type { Clock, IdGenerator } from '@pm/shared-kernel';
 import type { ProjectRepository, TaskRepository } from '@pm/projects-core-model';
 import {
+  addCommentUseCase,
   addTaskUseCase,
   assignTaskUseCase,
   createProjectUseCase,
@@ -14,11 +15,13 @@ import {
 } from '@pm/projects-core-application';
 import {
   getProjectDetail,
+  listComments,
   listProjects,
   listTasks,
   PROJECTS_TOKENS,
 } from '@pm/projects-data';
 import type { Database } from '@pm/projects-data';
+import type { CommentRepository } from '@pm/projects-core-model';
 
 function db(container: Container): Database {
   return container.get<Database>(SHARED_TOKENS.Database);
@@ -30,6 +33,10 @@ function projectRepository(container: Container): ProjectRepository {
 
 function taskRepository(container: Container): TaskRepository {
   return container.get<TaskRepository>(PROJECTS_TOKENS.TaskRepository);
+}
+
+function commentRepository(container: Container): CommentRepository {
+  return container.get<CommentRepository>(PROJECTS_TOKENS.CommentRepository);
 }
 
 function clock(container: Container): Clock {
@@ -127,5 +134,23 @@ export const projectsRouter = router({
     .input(z.object({ taskId: z.string(), assigneeId: z.string() }))
     .mutation(({ ctx, input }) =>
       assignTaskUseCase(input, { taskRepository: taskRepository(ctx.container) }),
+    ),
+
+  comments: publicProcedure
+    .input(z.object({ projectId: z.string() }))
+    .query(({ ctx, input }) => listComments(db(ctx.container), input.projectId)),
+
+  addComment: protectedProcedure
+    .input(z.object({ projectId: z.string(), body: z.string().min(1) }))
+    .mutation(({ ctx, input }) =>
+      addCommentUseCase(
+        { projectId: input.projectId, authorId: ctx.actor.id, body: input.body },
+        {
+          projectRepository: projectRepository(ctx.container),
+          commentRepository: commentRepository(ctx.container),
+          clock: clock(ctx.container),
+          idGenerator: idGenerator(ctx.container),
+        },
+      ),
     ),
 });

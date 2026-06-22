@@ -22,8 +22,16 @@ export default function ProjectDetailPage() {
       void utils.projects.detail.invalidate({ projectId });
     },
   });
+  const comments = trpc.projects.comments.useQuery({ projectId });
+  const addComment = trpc.projects.addComment.useMutation({
+    onSuccess: () => {
+      void utils.projects.comments.invalidate({ projectId });
+      setBody('');
+    },
+  });
 
   const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
 
   if (project.isLoading) {
     return <p>Loading project…</p>;
@@ -72,6 +80,35 @@ export default function ProjectDetailPage() {
         />
         <button type="submit" data-testid="add-task-submit" disabled={addTask.isPending}>
           Add task
+        </button>
+      </form>
+
+      <h2>Comments</h2>
+      <ul data-testid="comment-list">
+        {comments.data?.map((comment) => (
+          <li key={comment.id} data-testid={`comment-${comment.id}`}>
+            {comment.body}
+          </li>
+        ))}
+      </ul>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (body.trim()) {
+            addComment.mutate({ projectId, body: body.trim() });
+          }
+        }}
+      >
+        <input
+          type="text"
+          value={body}
+          onChange={(e) => setBody(e.target.value)}
+          placeholder="Add a comment"
+          data-testid="add-comment-body"
+          required
+        />
+        <button type="submit" data-testid="add-comment-submit" disabled={addComment.isPending}>
+          Comment
         </button>
       </form>
     </section>

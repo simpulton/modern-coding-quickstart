@@ -3,4 +3,5 @@ export * from './lib/database';
 export * from './lib/projects.tokens';
 export * from './lib/project-repository';
 export * from './lib/task-repository';
+export * from './lib/comment-repository';
 export * from './lib/queries';

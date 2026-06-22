@@ -3,7 +3,27 @@
 
 import { asc, desc, eq } from 'drizzle-orm';
 import type { Database } from './database';
-import { projects, tasks } from './schema';
+import { comments, projects, tasks } from './schema';
+
+export interface CommentView {
+  id: string;
+  authorId: string;
+  body: string;
+  createdAt: Date;
+}
+
+export async function listComments(db: Database, projectId: string): Promise<CommentView[]> {
+  return db
+    .select({
+      id: comments.id,
+      authorId: comments.authorId,
+      body: comments.body,
+      createdAt: comments.createdAt,
+    })
+    .from(comments)
+    .where(eq(comments.projectId, projectId))
+    .orderBy(asc(comments.createdAt));
+}
 
 export interface ProjectSummary {
   id: string;

@@ -22,7 +22,7 @@
       "executor": "nx:run-commands",
       "cache": true,
       "options": {
-        "command": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --config libs/_shared/testing/jest.config.cts"
+        "command": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --config libs/_shared/testing/jest.config.cts --runInBand"
       }
     }
   }
