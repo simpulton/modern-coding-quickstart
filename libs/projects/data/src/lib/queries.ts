@@ -2,8 +2,8 @@
 // DTOs. No use cases, no repositories — reads bypass the domain layer.
 
 import { asc, desc, eq } from 'drizzle-orm';
-import type { Database } from './database';
-import { projects, tasks } from './schema';
+import type { Database } from './database.js';
+import { projects, tasks } from './schema.js';
 
 export interface ProjectSummary {
   id: string;
