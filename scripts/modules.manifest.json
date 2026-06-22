@@ -4,6 +4,22 @@
     {
       "tag": "00-setup",
       "commit": "181dbc555add6d0e05405b457df0796b5ca7c788"
+    },
+    {
+      "tag": "01-start",
+      "commit": "3783de660fc63b32c6a2069ca23a513b923009ad"
+    },
+    {
+      "tag": "01-complete",
+      "commit": "31c7ee3607ee99623b6735d5911631d279deecaa"
+    },
+    {
+      "tag": "02-start",
+      "commit": "c7694d904e10600806b35d858941a780b8ea6154"
+    },
+    {
+      "tag": "02-complete",
+      "commit": "0946465978b85a9588ef10b97110519cde551a17"
     }
   ]
 }
