@@ -1,7 +1,9 @@
-import type { UserSummary } from './types';
+// Module 02 starting point: the prop is typed `any` behind an escape hatch.
+// Your job is to give it a real, colocated type and remove the disable directive.
 
 interface UserCardProps {
-  user: UserSummary;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  user: any;
 }
 
 export function UserCard({ user }: UserCardProps) {
