@@ -2,8 +2,8 @@ import { inject, injectable } from 'inversify';
 import { eq } from 'drizzle-orm';
 import { SHARED_TOKENS } from '@pm/shared-kernel';
 import type { Task, TaskRepository } from '@pm/projects-core-model';
-import type { Database } from './database.js';
-import { tasks } from './schema.js';
+import type { Database } from './database';
+import { tasks } from './schema';
 
 @injectable()
 export class DrizzleTaskRepository implements TaskRepository {
