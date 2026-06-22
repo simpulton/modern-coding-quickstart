@@ -17,11 +17,6 @@ export default function ProjectDetailPage() {
       setTitle('');
     },
   });
-  const updateStatus = trpc.projects.updateTaskStatus.useMutation({
-    onSuccess: () => {
-      void utils.projects.detail.invalidate({ projectId });
-    },
-  });
 
   const [title, setTitle] = useState('');
 
@@ -47,12 +42,7 @@ export default function ProjectDetailPage() {
         </ul>
       )}
 
-      <TaskList
-        tasks={tasks}
-        onStatusChange={(taskId, status) => {
-          updateStatus.mutate({ taskId, status });
-        }}
-      />
+      <TaskList tasks={tasks} />
 
       <form
         onSubmit={(e) => {

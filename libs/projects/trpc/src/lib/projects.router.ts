@@ -9,7 +9,6 @@ import {
   createProjectUseCase,
   deleteProjectUseCase,
   updateProjectUseCase,
-  updateTaskStatusUseCase,
 } from '@pm/projects-core-application';
 import {
   getProjectDetail,
@@ -40,7 +39,6 @@ function idGenerator(container: Container): IdGenerator {
 }
 
 const taskPriority = z.enum(['low', 'medium', 'high']);
-const taskStatus = z.enum(['todo', 'doing', 'done']);
 
 export const projectsRouter = router({
   list: publicProcedure.query(({ ctx }) => listProjects(db(ctx.container))),
@@ -114,11 +112,5 @@ export const projectsRouter = router({
         clock: clock(ctx.container),
         idGenerator: idGenerator(ctx.container),
       }),
-    ),
-
-  updateTaskStatus: protectedProcedure
-    .input(z.object({ taskId: z.string(), status: taskStatus }))
-    .mutation(({ ctx, input }) =>
-      updateTaskStatusUseCase(input, { taskRepository: taskRepository(ctx.container) }),
     ),
 });
