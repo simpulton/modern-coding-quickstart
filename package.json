@@ -21,7 +21,8 @@
     "module:compare": "node scripts/module.mjs compare",
     "module:reset": "node scripts/module.mjs reset",
     "module:status": "node scripts/module.mjs status",
-    "rebuild-tags": "node scripts/rebuild-tags.mjs"
+    "rebuild-tags": "node scripts/rebuild-tags.mjs",
+    "prepare": "husky"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.3",
@@ -74,6 +75,7 @@
     "eslint-plugin-jsx-a11y": "6.10.1",
     "eslint-plugin-react": "7.35.0",
     "eslint-plugin-react-hooks": "5.0.0",
+    "husky": "^9.1.7",
     "jest": "^30.0.0",
     "jest-environment-jsdom": "~30.3.0",
     "jest-environment-node": "^30.0.0",

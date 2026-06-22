@@ -1,0 +1,3 @@
+# Principle IX — these checks exist for a reason; don't skip them with --no-verify.
+# Typecheck and lint the projects affected by your staged changes.
+npx nx affected -t typecheck lint --uncommitted
