@@ -1,0 +1,29 @@
+{
+  "name": "shared-testing",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/_shared/testing/src",
+  "projectType": "library",
+  "tags": [
+    "type:test-support",
+    "subdomain:shared"
+  ],
+  "targets": {
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "cache": true,
+      "options": {
+        "command": "tsc --noEmit -p libs/_shared/testing/tsconfig.lib.json"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "cache": true,
+      "options": {
+        "command": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --config libs/_shared/testing/jest.config.cts"
+      }
+    }
+  }
+}

@@ -23,7 +23,24 @@
     "forceConsistentCasingInFileNames": true,
     "types": ["node", "reflect-metadata"],
     "paths": {
-      "@pm/projects-core-model": ["./libs/projects/core/model/src/index.ts"]
+      "@pm/projects-core-model": ["./libs/projects/core/model/src/index.ts"],
+      "@pm/projects-core-application": [
+        "./libs/projects/core/application/src/index.ts"
+      ],
+      "@pm/projects-data": ["./libs/projects/data/src/index.ts"],
+      "@pm/projects-trpc": ["./libs/projects/trpc/src/index.ts"],
+      "@pm/users-core-model": ["./libs/users/core/model/src/index.ts"],
+      "@pm/users-core-application": [
+        "./libs/users/core/application/src/index.ts"
+      ],
+      "@pm/users-data": ["./libs/users/data/src/index.ts"],
+      "@pm/users-trpc": ["./libs/users/trpc/src/index.ts"],
+      "@pm/shared-kernel": ["./libs/_shared/kernel/src/index.ts"],
+      "@pm/shared-testing": ["./libs/_shared/testing/src/index.ts"],
+      "@pm/shared-infrastructure": [
+        "./libs/_shared/infrastructure/src/index.ts"
+      ],
+      "@pm/shared-trpc": ["./libs/_shared/trpc/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

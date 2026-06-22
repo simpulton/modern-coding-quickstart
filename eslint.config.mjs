@@ -46,6 +46,8 @@ export default [
               ],
             },
             { sourceTag: 'type:shared', onlyDependOnLibsWithTags: ['type:shared'] },
+            // The test composition root wires the full graph against PGLite.
+            { sourceTag: 'type:test-support', onlyDependOnLibsWithTags: ['*'] },
             { sourceTag: 'type:app', onlyDependOnLibsWithTags: ['*'] },
           ],
         },

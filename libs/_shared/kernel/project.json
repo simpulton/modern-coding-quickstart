@@ -1,0 +1,31 @@
+{
+  "name": "shared-kernel",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/_shared/kernel/src",
+  "projectType": "library",
+  "tags": [
+    "type:shared",
+    "subdomain:shared"
+  ],
+  "targets": {
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "cache": true,
+      "options": {
+        "command": "tsc --noEmit -p libs/_shared/kernel/tsconfig.lib.json"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "libs/_shared/kernel/jest.config.cts"
+      }
+    }
+  }
+}
