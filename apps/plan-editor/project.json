@@ -9,7 +9,7 @@
       "executor": "nx:run-commands",
       "cache": true,
       "options": {
-        "command": "tsc --noEmit -p apps/plan-editor/tsconfig.json"
+        "command": "tsc --noEmit -p apps/plan-editor/tsconfig.typecheck.json"
       }
     },
     "build": {
