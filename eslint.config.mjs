@@ -49,6 +49,7 @@ export default [
             // The test composition root wires the full graph against PGLite.
             { sourceTag: 'type:test-support', onlyDependOnLibsWithTags: ['*'] },
             { sourceTag: 'type:app', onlyDependOnLibsWithTags: ['*'] },
+            { sourceTag: 'type:e2e', onlyDependOnLibsWithTags: ['*'] },
           ],
         },
       ],
