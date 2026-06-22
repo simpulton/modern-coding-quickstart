@@ -1,0 +1,4 @@
+{
+  "description": "Workshop module tag manifest. Each entry maps a tag name to the git commit SHA it points at. scripts/rebuild-tags.mjs reads this file to recreate or move tags after history changes.",
+  "tags": []
+}
