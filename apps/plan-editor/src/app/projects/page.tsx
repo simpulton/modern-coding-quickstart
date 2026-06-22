@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { trpc } from '../../trpc/client';
-import { formatDate } from '../../lib/utils';
+import { formatDate } from '../../lib/formatting';
 
 export default function ProjectsPage() {
   const projects = trpc.projects.list.useQuery();
