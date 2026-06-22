@@ -1,9 +1,12 @@
-// Module 02 starting point: the prop is typed `any` behind an escape hatch.
-// Your job is to give it a real, colocated type and remove the disable directive.
+import type { inferRouterOutputs } from '@trpc/server';
+import type { usersRouter } from '@pm/users-trpc';
+
+// The user shape is the server's `users.detail` output, colocated with its only
+// consumer rather than parked in a generic types file.
+export type UserSummary = NonNullable<inferRouterOutputs<typeof usersRouter>['detail']>;
 
 interface UserCardProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  user: any;
+  user: UserSummary;
 }
 
 export function UserCard({ user }: UserCardProps) {
