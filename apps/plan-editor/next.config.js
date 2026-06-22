@@ -10,6 +10,9 @@ const nextConfig = {
   // Use this to set Nx-specific options
   // See: https://nx.dev/docs/technologies/react/next/Guides/next-config-setup
   nx: {},
+  // PGLite loads a WASM runtime from disk; keep it out of the server bundle so
+  // Node resolves the package (and its .wasm) natively rather than via webpack.
+  serverExternalPackages: ['@electric-sql/pglite'],
 };
 
 const plugins = [
