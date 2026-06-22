@@ -48,5 +48,22 @@ Thumbs.db
 .nx/polygraph
 .nx/self-healing
 .nx/migrate-runs
+# Next.js
+.next
+apps/*/.next
+
+# Playwright
+test-results
+playwright-report
+.auth
+
+# Drizzle
+drizzle/
+
+# env
+.env
+.env.local
+.env.*.local
+
 # TS incremental build info
 *.tsbuildinfo

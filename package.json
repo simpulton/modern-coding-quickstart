@@ -1,21 +1,73 @@
 {
-  "name": "@org/source",
-  "version": "0.0.0",
+  "name": "modern-coding-quickstart",
+  "version": "0.0.1",
   "license": "MIT",
-  "scripts": {},
   "private": true,
-  "dependencies": {},
+  "engines": {
+    "node": ">=20.0.0 <21.0.0"
+  },
+  "scripts": {
+    "typecheck": "nx run-many -t typecheck",
+    "lint": "nx run-many -t lint",
+    "test": "nx run-many -t test",
+    "build": "nx run-many -t build",
+    "verify": "nx run-many -t typecheck lint test build",
+    "dev": "nx dev plan-editor",
+    "format": "nx format:write",
+    "graph": "nx graph",
+    "drizzle:generate": "drizzle-kit generate",
+    "drizzle:push": "drizzle-kit push",
+    "module:begin": "node scripts/module.mjs begin",
+    "module:compare": "node scripts/module.mjs compare",
+    "module:reset": "node scripts/module.mjs reset",
+    "module:status": "node scripts/module.mjs status",
+    "rebuild-tags": "node scripts/rebuild-tags.mjs"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.5.3",
+    "@tanstack/react-query": "^5.62.0",
+    "@trpc/client": "^11.18.0",
+    "@trpc/next": "^11.18.0",
+    "@trpc/react-query": "^11.18.0",
+    "@trpc/server": "^11.18.0",
+    "bcryptjs": "^2.4.3",
+    "drizzle-orm": "^0.45.2",
+    "inversify": "^6.2.2",
+    "jose": "^5.9.6",
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "reflect-metadata": "^0.2.2",
+    "zod": "^3.25.76"
+  },
   "devDependencies": {
+    "@nx/eslint": "23.0.0",
+    "@nx/eslint-plugin": "23.0.0",
+    "@nx/jest": "23.0.0",
     "@nx/js": "23.0.0",
+    "@nx/next": "23.0.0",
+    "@nx/playwright": "23.0.0",
+    "@nx/react": "23.0.0",
+    "@playwright/test": "^1.49.0",
     "@swc-node/register": "1.11.1",
     "@swc/core": "1.15.8",
     "@swc/helpers": "0.5.18",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20.19.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "drizzle-kit": "^0.30.0",
+    "eslint": "^9.18.0",
+    "jest": "^30.0.0",
+    "jest-environment-node": "^30.0.0",
+    "jest-util": "~30.3.0",
     "nx": "23.0.0",
     "prettier": "^3.8.1",
+    "ts-jest": "^29.2.0",
+    "ts-node": "10.9.1",
     "tslib": "^2.3.0",
-    "typescript": "~5.9.2"
-  },
-  "workspaces": [
-    "packages/*"
-  ]
+    "typescript": "~5.9.2",
+    "typescript-eslint": "^8.20.0"
+  }
 }

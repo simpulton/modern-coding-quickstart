@@ -1,0 +1,26 @@
+{
+  "name": "projects-core-model",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/projects/core/model/src",
+  "projectType": "library",
+  "tags": ["type:core-model", "subdomain:projects"],
+  "targets": {
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "cache": true,
+      "options": {
+        "command": "tsc --noEmit -p libs/projects/core/model/tsconfig.lib.json"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/projects/core/model/jest.config.cts"
+      }
+    }
+  }
+}
