@@ -39,7 +39,9 @@
       "@pm/shared-infrastructure": [
         "./libs/_shared/infrastructure/src/index.ts"
       ],
-      "@pm/shared-trpc": ["./libs/_shared/trpc/src/index.ts"]
+      "@pm/shared-trpc": ["./libs/_shared/trpc/src/index.ts"],
+      "@pm/projects-ui": ["./libs/projects/ui/src/index.ts"],
+      "@pm/users-ui": ["./libs/users/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

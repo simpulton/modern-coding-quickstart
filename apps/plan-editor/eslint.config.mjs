@@ -10,12 +10,14 @@ const compat = new FlatCompat({
   recommendedConfig: js.configs.recommended,
 });
 
-export default [
+const config = [
   ...fixupConfigRules(compat.extends('next')),
   ...fixupConfigRules(compat.extends('next/core-web-vitals')),
   ...nx.configs['flat/react-typescript'],
   ...baseConfig,
   {
-    ignores: ['.next/**/*'],
+    ignores: ['.next/**/*', 'next-env.d.ts', '**/next-env.d.ts'],
   },
 ];
+
+export default config;
