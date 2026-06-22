@@ -5,6 +5,7 @@ import type { Clock, IdGenerator } from '@pm/shared-kernel';
 export interface CreateProjectInput {
   name: string;
   description?: string;
+  tags?: string[];
   actorId: string;
 }
 
@@ -22,6 +23,7 @@ export async function createProjectUseCase(
     id: deps.idGenerator.next(),
     name: input.name,
     description: input.description,
+    tags: input.tags,
     ownerId: input.actorId,
     now: deps.clock.now(),
   });

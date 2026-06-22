@@ -33,7 +33,12 @@ export async function seedDevData(container: Container): Promise<void> {
   );
 
   const apollo = await createProjectUseCase(
-    { name: 'Apollo', description: 'Launch the new dashboard', actorId: alice.id },
+    {
+      name: 'Apollo',
+      description: 'Launch the new dashboard',
+      tags: ['frontend', 'q3'],
+      actorId: alice.id,
+    },
     { projectRepository, clock, idGenerator },
   );
   await createProjectUseCase(

@@ -33,12 +33,19 @@ export default function ProjectDetailPage() {
     return <p>Project not found.</p>;
   }
 
-  const { name, description, tasks } = project.data;
+  const { name, description, tags, tasks } = project.data;
 
   return (
     <section>
       <h1 data-testid="project-name">{name}</h1>
       {description && <p data-testid="project-description">{description}</p>}
+      {tags.length > 0 && (
+        <ul data-testid="project-tags" className="tags">
+          {tags.map((tag) => (
+            <li key={tag}>#{tag}</li>
+          ))}
+        </ul>
+      )}
 
       <TaskList
         tasks={tasks}

@@ -19,12 +19,19 @@ describe('createProject', () => {
     const project = createProject({ ...base, name: 'Apollo', description: '   ' });
     expect(project.description).toBeUndefined();
   });
+
+  it('lowercases, trims, and de-duplicates tags, defaulting to []', () => {
+    expect(createProject({ ...base, name: 'Apollo' }).tags).toEqual([]);
+    const project = createProject({ ...base, name: 'Apollo', tags: ['Frontend', ' frontend ', 'Q3'] });
+    expect(project.tags).toEqual(['frontend', 'q3']);
+  });
 });
 
 describe('assertCanModifyProject', () => {
   const project: Project = {
     id: 'p1',
     name: 'Apollo',
+    tags: [],
     ownerId: 'owner',
     createdAt: new Date('2026-06-22T00:00:00Z'),
   };

@@ -16,12 +16,13 @@ export class DrizzleProjectRepository implements ProjectRepository {
         id: project.id,
         name: project.name,
         description: project.description ?? null,
+        tags: project.tags,
         ownerId: project.ownerId,
         createdAt: project.createdAt,
       })
       .onConflictDoUpdate({
         target: projects.id,
-        set: { name: project.name, description: project.description ?? null },
+        set: { name: project.name, description: project.description ?? null, tags: project.tags },
       });
   }
 
@@ -40,6 +41,7 @@ function toProject(row: typeof projects.$inferSelect): Project {
     id: row.id,
     name: row.name,
     description: row.description ?? undefined,
+    tags: row.tags,
     ownerId: row.ownerId,
     createdAt: row.createdAt,
   };

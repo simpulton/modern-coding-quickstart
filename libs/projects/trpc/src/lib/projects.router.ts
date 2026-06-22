@@ -54,10 +54,16 @@ export const projectsRouter = router({
     .query(({ ctx, input }) => listTasks(db(ctx.container), input.projectId)),
 
   create: protectedProcedure
-    .input(z.object({ name: z.string().min(1), description: z.string().optional() }))
+    .input(
+      z.object({
+        name: z.string().min(1),
+        description: z.string().optional(),
+        tags: z.array(z.string()).optional(),
+      }),
+    )
     .mutation(({ ctx, input }) =>
       createProjectUseCase(
-        { name: input.name, description: input.description, actorId: ctx.actor.id },
+        { name: input.name, description: input.description, tags: input.tags, actorId: ctx.actor.id },
         {
           projectRepository: projectRepository(ctx.container),
           clock: clock(ctx.container),

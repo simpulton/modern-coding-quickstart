@@ -23,6 +23,7 @@ export interface TaskSummary {
 
 export interface ProjectDetail extends ProjectSummary {
   description?: string;
+  tags: string[];
   tasks: TaskSummary[];
 }
 
@@ -49,6 +50,7 @@ export async function getProjectDetail(db: Database, projectId: string): Promise
     id: project.id,
     name: project.name,
     description: project.description ?? undefined,
+    tags: project.tags,
     ownerId: project.ownerId,
     createdAt: project.createdAt,
     tasks: taskRows,

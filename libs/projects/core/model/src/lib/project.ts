@@ -8,6 +8,7 @@ export interface Project {
   id: string;
   name: string;
   description?: string;
+  tags: string[];
   ownerId: string;
   createdAt: Date;
 }
@@ -16,6 +17,7 @@ export interface NewProjectInput {
   id: string;
   name: string;
   description?: string;
+  tags?: string[];
   ownerId: string;
   now: Date;
 }
@@ -29,9 +31,24 @@ export function createProject(input: NewProjectInput): Project {
     id: input.id,
     name,
     description: input.description?.trim() || undefined,
+    tags: normalizeTags(input.tags),
     ownerId: input.ownerId,
     createdAt: input.now,
   };
+}
+
+function normalizeTags(tags: string[] | undefined): string[] {
+  if (!tags) {
+    return [];
+  }
+  const seen = new Set<string>();
+  for (const tag of tags) {
+    const trimmed = tag.trim().toLowerCase();
+    if (trimmed.length > 0) {
+      seen.add(trimmed);
+    }
+  }
+  return [...seen];
 }
 
 export interface ProjectActor {

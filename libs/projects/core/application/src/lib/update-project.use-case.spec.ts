@@ -21,6 +21,7 @@ function fakeRepository(seed: Project[]): ProjectRepository {
 const project: Project = {
   id: 'p1',
   name: 'Apollo',
+  tags: [],
   ownerId: 'owner',
   createdAt: new Date('2026-06-22T00:00:00Z'),
 };

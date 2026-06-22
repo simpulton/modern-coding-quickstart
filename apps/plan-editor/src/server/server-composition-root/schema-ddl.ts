@@ -18,6 +18,7 @@ export function applySchema(client: PGlite): Promise<unknown> {
       id TEXT PRIMARY KEY,
       name TEXT NOT NULL,
       description TEXT,
+      tags TEXT[] NOT NULL DEFAULT '{}',
       owner_id TEXT NOT NULL,
       created_at TIMESTAMPTZ NOT NULL DEFAULT now()
     );
