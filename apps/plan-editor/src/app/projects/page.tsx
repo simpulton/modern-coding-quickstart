@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { trpc } from '../../trpc/client';
+import { formatDate } from '../../lib/utils';
 
 export default function ProjectsPage() {
   const projects = trpc.projects.list.useQuery();
@@ -16,6 +17,7 @@ export default function ProjectsPage() {
         {projects.data?.map((project) => (
           <li key={project.id}>
             <Link href={`/projects/${project.id}`}>{project.name}</Link>
+            <span className="muted"> · {formatDate(project.createdAt)}</span>
           </li>
         ))}
       </ul>
