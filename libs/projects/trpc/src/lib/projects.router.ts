@@ -121,4 +121,12 @@ export const projectsRouter = router({
     .mutation(({ ctx, input }) =>
       updateTaskStatusUseCase(input, { taskRepository: taskRepository(ctx.container) }),
     ),
+
+  // Module 05 starting point: a stub to make the failing test compile. Replace it
+  // with a call to your assignTaskUseCase.
+  assignTask: protectedProcedure
+    .input(z.object({ taskId: z.string(), assigneeId: z.string() }))
+    .mutation(() => {
+      throw new Error('Not implemented: Module 05');
+    }),
 });
