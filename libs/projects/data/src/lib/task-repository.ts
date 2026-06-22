@@ -1,12 +1,11 @@
-// Module 04 starting point: this adapter is no longer @injectable() and is bound
-// in neither composition root. Restore the decorator and both bindings.
-import { inject } from 'inversify';
+import { inject, injectable } from 'inversify';
 import { eq } from 'drizzle-orm';
 import { SHARED_TOKENS } from '@pm/shared-kernel';
 import type { Task, TaskRepository } from '@pm/projects-core-model';
 import type { Database } from './database';
 import { tasks } from './schema';
 
+@injectable()
 export class DrizzleTaskRepository implements TaskRepository {
   constructor(@inject(SHARED_TOKENS.Database) private readonly db: Database) {}
 
