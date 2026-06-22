@@ -1,0 +1,51 @@
+{
+  "name": "plan-editor",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/plan-editor",
+  "projectType": "application",
+  "tags": ["type:app"],
+  "targets": {
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "cache": true,
+      "options": {
+        "command": "tsc --noEmit -p apps/plan-editor/tsconfig.json"
+      }
+    },
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/plan-editor"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "apps/plan-editor"
+        },
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "plan-editor:build",
+        "dev": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "plan-editor:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "plan-editor:build:production",
+          "dev": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

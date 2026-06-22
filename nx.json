@@ -1,8 +1,12 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "tui": { "enabled": false },
+  "tui": {
+    "enabled": false
+  },
   "defaultBase": "main",
-  "affected": { "defaultBase": "main" },
+  "affected": {
+    "defaultBase": "main"
+  },
   "workspaceLayout": {
     "appsDir": "apps",
     "libsDir": "libs"
@@ -34,8 +38,21 @@
     "lint": {
       "cache": true,
       "inputs": ["default", "{workspaceRoot}/eslint.config.mjs"]
+    },
+    "@nx/next:build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   },
   "useInferencePlugins": false,
-  "analytics": false
+  "analytics": false,
+  "generators": {
+    "@nx/next": {
+      "application": {
+        "style": "css",
+        "linter": "eslint"
+      }
+    }
+  }
 }

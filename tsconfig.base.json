@@ -21,7 +21,6 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["node", "reflect-metadata"],
     "paths": {
       "@pm/projects-core-model": ["./libs/projects/core/model/src/index.ts"],
       "@pm/projects-core-application": [

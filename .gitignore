@@ -64,6 +64,5 @@ drizzle/
 .env
 .env.local
 .env.*.local
-
 # TS incremental build info
 *.tsbuildinfo

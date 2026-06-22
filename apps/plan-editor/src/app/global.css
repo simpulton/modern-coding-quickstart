@@ -1,0 +1,8 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; color: #1a1a1a; }
+.container { max-width: 880px; margin: 0 auto; padding: 1.5rem; }
+.navbar { display: flex; gap: 1rem; align-items: center; padding: 0.75rem 1.5rem; background: #111; color: #fff; }
+.navbar a { color: #fff; text-decoration: none; }
+.navbar .spacer { flex: 1; }
+.navbar button { background: transparent; color: #fff; border: 1px solid #fff; border-radius: 4px; padding: 0.25rem 0.5rem; cursor: pointer; }
+h1 { font-size: 1.5rem; }
