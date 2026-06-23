@@ -66,3 +66,6 @@ drizzle/
 .env.*.local
 # TS incremental build info
 *.tsbuildinfo
+
+# Nx/Claude Code local config — keep out of the repo
+CLAUDE.md
