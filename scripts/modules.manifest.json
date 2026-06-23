@@ -3,87 +3,87 @@
   "tags": [
     {
       "tag": "00-setup",
-      "commit": "cc5dd384d92a620728271811bee58443d63a9fe8"
+      "commit": "e6d48fdb552606f71b8e9dba9ea052f4b6f49e96"
     },
     {
       "tag": "01-start",
-      "commit": "dd9f4af237b027a27325b11631791ae9ee76a691"
+      "commit": "1d0b2635fd60b471384c46c4ccebc16030212a63"
     },
     {
       "tag": "01-complete",
-      "commit": "892e8bbdd93231161390d44ca65e043e82037d72"
+      "commit": "b6d8c4ea8412d1e310034031611d6884c73ee1ce"
     },
     {
       "tag": "02-start",
-      "commit": "60af61838bc6a70d4f74ea299989be6e512c0cd1"
+      "commit": "c9f7e494eced96e57b077841542a6cc2801649da"
     },
     {
       "tag": "02-complete",
-      "commit": "940034989eb8a9ab9a35260419882c16c2399c0e"
+      "commit": "06caea7a70869cfcc8c8c174863254ed6c5cdf68"
     },
     {
       "tag": "03-start",
-      "commit": "744c8884d80cba81c883892c8e6981df0da90da3"
+      "commit": "32726ed38dfe10d9f7667919198da8da366a1ac6"
     },
     {
       "tag": "03-complete",
-      "commit": "2ca94286b45002f5fae370cb7ae0efbe11b5685f"
+      "commit": "a9bc46b7bd10755b4a5350a90b21990f9eda7dd9"
     },
     {
       "tag": "04-start",
-      "commit": "be8f4e000108338d688e051d396ccf50762c8238"
+      "commit": "e6a08529fa98fd98ac19f2a3e1f87e906c8b70f9"
     },
     {
       "tag": "04-complete",
-      "commit": "a768ff3833a9920eb19c50868e81892008b24c0e"
+      "commit": "986b90bb16a6b9adb00f87ea9678a13c2e916000"
     },
     {
       "tag": "05-start",
-      "commit": "6e25589b6232fdc9ce6b5c925c16fb243b19dcb7"
+      "commit": "3abf08e09561f54ec9358561c8c0d11a07078328"
     },
     {
       "tag": "05-complete",
-      "commit": "bce9addb85120eda857740eb55db88ea71eafcdb"
+      "commit": "46cb14138b9efcb803d86d80aa763f287c85d6e3"
     },
     {
       "tag": "06-start",
-      "commit": "6325cac33ad3d80c597b8b4460cbe948d30f326b"
+      "commit": "204d4bfbc245504c3f09ba039524c8973441c85d"
     },
     {
       "tag": "06-complete",
-      "commit": "3373fe3504f6d1a2af6b5e94edb0ce5fc8ab1aa1"
+      "commit": "a7ef6902aee63ce5bc9e42ed64443ec75c3f56f9"
     },
     {
       "tag": "07-start",
-      "commit": "91bc5707d5be434212833732ff3fc02b1ecaf253"
+      "commit": "6028da7b220157b129ce36004f27b5d0cbe2f678"
     },
     {
       "tag": "07-complete",
-      "commit": "47e6d10827a1c93c28b46c515e67b69e4e5574b6"
+      "commit": "b0eb1c5161beb61245a950a949008e453961284e"
     },
     {
       "tag": "08-start",
-      "commit": "ad8beee8612a51bea4bf9587946d919ccfdade6e"
+      "commit": "27be2afce7ffd50ec23c3139a2560c04a8fef7cd"
     },
     {
       "tag": "08-complete",
-      "commit": "ed953ab3b5b51c830a6c1e0aae7c7dbda5aa6e91"
+      "commit": "13ac3d4da9d3104e743cf8c13de115e428d8be89"
     },
     {
       "tag": "09-start",
-      "commit": "0ef06d102afe3ef3ed946d840ca895da7fc0b309"
+      "commit": "58c0f3bb0fb3db42a4d25ea8e6f8cc4b73150961"
     },
     {
       "tag": "09-complete",
-      "commit": "19833bfa0a7473921564aa1e6f858121e712c320"
+      "commit": "72784747be18921b2e27dd421449a6964f0d8b46"
     },
     {
       "tag": "10-start",
-      "commit": "ee98f584b6ffd259971295655162d801714f7b11"
+      "commit": "955acb7ef7af8db2215be6d702590d11ee60df99"
     },
     {
       "tag": "10-complete",
-      "commit": "367c0dd06ad5a73df1305bc676621e87cecaa582"
+      "commit": "8ef5578704a70019b154da9670612db4eb429baa"
     }
   ]
 }
